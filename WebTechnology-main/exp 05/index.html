@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Sci Calculator</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; }
+    #calc { width: 230px; margin: 50px auto; padding: 10px; border: 2px solid #444; border-radius: 10px; }
+    input[type="text"] { width: 200px; height: 40px; font-size: 18px; text-align: right; margin-bottom: 10px; }
+    button { width: 50px; height: 40px; margin: 2px; font-size: 16px; }
+  </style>
+</head>
+<body>
+
+<div id="calc">
+  <input type="text" id="display" disabled><br>
+  <button onclick="clearDisplay()">C</button>
+  <button onclick="append('Math.sqrt')">√</button>
+  <button onclick="append('Math.PI')">π</button>
+  <button onclick="append('/')">/</button><br>
+
+  <button onclick="append('7')">7</button>
+  <button onclick="append('8')">8</button>
+  <button onclick="append('9')">9</button>
+  <button onclick="append('*')">*</button><br>
+
+  <button onclick="append('4')">4</button>
+  <button onclick="append('5')">5</button>
+  <button onclick="append('6')">6</button>
+  <button onclick="append('-')">-</button><br>
+
+  <button onclick="append('1')">1</button>
+  <button onclick="append('2')">2</button>
+  <button onclick="append('3')">3</button>
+  <button onclick="append('+')">+</button><br>
+
+  <button onclick="append('0')">0</button>
+  <button onclick="append('.')">.</button>
+  <button onclick="append('Math.sin')">sin</button>
+  <button onclick="calculate()">=</button>
+</div>
+
+<script>
+  let disp = document.getElementById("display");
+
+  function append(val) { disp.value += val; }
+  function clearDisplay() { disp.value = ""; }
+  function calculate() {
+    try { disp.value = eval(disp.value); }
+    catch { disp.value = "Error"; }
+  }
+</script>
+
+</body>
+</html>

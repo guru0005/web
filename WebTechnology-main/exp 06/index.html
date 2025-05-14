@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User Registration</h2>
+
+  <form onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Email:</label>
+    <input type="text" id="email">
+
+    <label>Phone:</label>
+    <input type="text" id="phone">
+
+    <label>Password:</label>
+    <input type="password" id="password">
+
+    <label>Confirm Password:</label>
+    <input type="password" id="confirm">
+
+    <input type="submit" value="Register">
+  </form>
+
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let phone = document.getElementById("phone").value;
+      let password = document.getElementById("password").value;
+      let confirm = document.getElementById("confirm").value;
+
+      if (name === "" || email === "" || phone === "" || password === "" || confirm === "") {
+        alert("All fields are required.");
+        return false;
+      }
+
+      if (!email.includes("@")) {
+        alert("Invalid email.");
+        return false;
+      }
+
+      if (phone.length != 10 || isNaN(phone)) {
+        alert("Phone number must be 10 digits.");
+        return false;
+      }
+
+      if (password !== confirm) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+      alert("Registration Successful!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>

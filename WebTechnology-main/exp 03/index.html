@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colored World Map - Image Mapping</title>
+</head>
+<body>
+
+    <h2>🗺️ Explore the World - Clickable Colored Map</h2>
+    <p>Click on a country to learn more about it:</p>
+
+    <!-- Colored World Map -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/1024px-World_map_-_low_resolution.svg.png" 
+         alt="Colored World Map" 
+         usemap="#worldmap" 
+         width="900" height="450">
+
+    <!-- Image Map -->
+    <map name="worldmap">
+        <!-- USA (rectangle area) -->
+        <area shape="rect" coords="130,120,210,170" 
+              href="https://en.wikipedia.org/wiki/United_States" 
+              alt="USA" 
+              title="United States" 
+              target="_blank">
+
+        <!-- India (circle area) -->
+        <area shape="circle" coords="650,210,20" 
+              href="https://en.wikipedia.org/wiki/India" 
+              alt="India" 
+              title="India" 
+              target="_blank">
+
+        <!-- Australia (polygon area) -->
+        <area shape="poly" coords="760,310,800,330,820,350,780,370,740,340" 
+              href="https://en.wikipedia.org/wiki/Australia" 
+              alt="Australia" 
+              title="Australia" 
+              target="_blank">
+    </map>
+
+</body>
+</html>

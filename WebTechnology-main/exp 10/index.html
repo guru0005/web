@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Selector Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h2 id="title">Welcome to jQuery</h2>
+<p class="text">This is a demo of jQuery selectors.</p>
+<button id="changeColor">Change Color</button>
+<script>
+$(document).ready(function(){
+$("#changeColor").click(function(){
+$("#title").css("color", "red"); // ID Selector
+$(".text").css("color", "blue"); // Class Selector
+});
+});
+</script>
+</body>
+</html>

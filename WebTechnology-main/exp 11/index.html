@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Eects</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h2>jQuery Eects Demo</h2>
+<p id="text">This text will be acted by jQuery effects.</p>
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="toggleBtn">Toggle</button>
+<script>
+$(document).ready(function(){
+$("#hideBtn").click(function(){ $("#text").hide(); });
+$("#showBtn").click(function(){ $("#text").show(); });
+$("#toggleBtn").click(function(){ $("#text").toggle(); });
+});
+</script>
+</body>
+</html>
