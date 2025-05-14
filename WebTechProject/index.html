@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - Professional Finance Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <h1>FinTrack</h1>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#dashboard"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                    <li><a href="#transactions"><i class="fas fa-exchange-alt"></i><span>Transactions</span></a></li>
+                    <li><a href="#budget"><i class="fas fa-wallet"></i><span>Budget</span></a></li>
+                    <li><a href="#reports"><i class="fas fa-chart-pie"></i><span>Reports</span></a></li>
+                    <li><a href="#goals"><i class="fas fa-bullseye"></i><span>Goals</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#settings"><i class="fas fa-cog"></i><span>Settings</span></a>
+                <a href="#help"><i class="fas fa-question-circle"></i><span>Help</span></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search transactions...">
+                </div>
+                <div class="user-actions">
+                    <button class="btn-notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Profile">
+                        <span>Guruprasath</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="dashboard-header">
+                    <h2>Dashboard</h2>
+                    <div class="date-selector">
+                        <button class="btn-date active">Day</button>
+                        <button class="btn-date">Week</button>
+                        <button class="btn-date">Month</button>
+                        <button class="btn-date">Year</button>
+                        <button class="btn-date custom"><i class="fas fa-calendar"></i> Custom</button>
+                    </div>
+                </div>
+
+                <div class="summary-cards">
+                    <div class="card income">
+                        <div class="card-icon">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Income</h3>
+                            <p class="amount">$8,920.00</p>
+                            <p class="trend positive"><i class="fas fa-arrow-up"></i> 12% from last month</p>
+                        </div>
+                    </div>
+
+                    <div class="card expenses">
+                        <div class="card-icon">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Expenses</h3>
+                            <p class="amount">$5,672.00</p>
+                            <p class="trend negative"><i class="fas fa-arrow-up"></i> 8% from last month</p>
+                        </div>
+                    </div>
+
+                    <div class="card savings">
+                        <div class="card-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Savings</h3>
+                            <p class="amount">$3,248.00</p>
+                            <p class="trend positive"><i class="fas fa-arrow-up"></i> 23% from last month</p>
+                        </div>
+                    </div>
+
+                    <div class="card balance">
+                        <div class="card-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Balance</h3>
+                            <p class="amount">$12,580.00</p>
+                            <p class="trend positive"><i class="fas fa-arrow-up"></i> 5% from last month</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-section">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Income vs Expenses</h3>
+                            <div class="chart-actions">
+                                <button class="btn-chart active">Line</button>
+                                <button class="btn-chart">Bar</button>
+                                <button class="btn-download"><i class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <canvas id="income-expense-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transaction-budget-section">
+                    <div class="recent-transactions">
+                        <div class="section-header">
+                            <h3>Recent Transactions</h3>
+                            <a href="#transactions" class="view-all">View All</a>
+                        </div>
+                        <div class="transaction-list" id="recent-transactions">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="budget-overview">
+                        <div class="section-header">
+                            <h3>Budget Overview</h3>
+                            <a href="#budget" class="view-all">View All</a>
+                        </div>
+                        <div class="budget-categories" id="budget-categories">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Transaction Modal -->
+    <div class="modal" id="add-transaction-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Transaction</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="transaction-form">
+                    <div class="form-group">
+                        <label for="transaction-type">Type</label>
+                        <div class="transaction-type-selector">
+                            <button type="button" class="transaction-type income active" data-type="income">Income</button>
+                            <button type="button" class="transaction-type expense" data-type="expense">Expense</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="transaction-amount">Amount</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="transaction-amount" min="0" step="0.01" required placeholder="Enter amount">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="transaction-category">Category</label>
+                        <select id="transaction-category" required>
+                            <option value="">Select a category</option>
+                            <!-- Categories will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transaction-date">Date</label>
+                        <input type="date" id="transaction-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transaction-description">Description</label>
+                        <input type="text" id="transaction-description" placeholder="What was this transaction for?">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel">Cancel</button>
+                        <button type="submit" class="btn-submit">Add Transaction</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="fab" id="add-transaction-fab" title="Add New Transaction">
+        <i class="fas fa-plus"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
